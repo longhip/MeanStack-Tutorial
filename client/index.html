@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="MeanStackApp">
+<head>
+	<meta charset="UTF-8">
+	<title>Mean Stack Tutorial</title>
+</head>
+<body>
+
+	<div class="container" ng-controller="TodoController">
+		<h1>{{hello}} {{a / b}}</h1>
+		<input type="text" placeholder="Search the friend..." ng-model="searchText">
+		<button ng-click="addTodo(todo)">Add Todo</button>
+		<ul>
+			<li ng-repeat="t in todos">
+				{{t}} <a ng-click="removeTodo(t)">X</a>
+			</li>
+		</ul>
+	</div>
+	
+	<script src="/node_modules/angular/angular.min.js"></script>
+	<script src="/client/app/app.js"></script>
+
+</body>
+
+</html>

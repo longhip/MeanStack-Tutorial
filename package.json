@@ -1,0 +1,20 @@
+{
+  "name": "meanstack",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "longhip.dev@gmail.com",
+  "license": "ISC",
+  "dependencies": {
+    "angular": "1.4.7",
+    "bootstrap": "^3.3.6",
+    "express": "^4.14.0",
+    "mongoose": "^4.5.3"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1"
+  }
+}
