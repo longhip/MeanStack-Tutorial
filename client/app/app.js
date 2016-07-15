@@ -1,14 +1,30 @@
 
-angular.module('MeanStackApp',[]).controller('TodoController', function($scope){
+angular.module('MeanStackApp',[]).controller('TodoController', function($scope, $http){
 
-	$scope.todos = ['Long', 'Trung', 'Cường'];
+	$scope.todo = {
+		name: '',
+		status: false
+	};
 
-	$scope.hello = 'Hello World';
+	$scope.index = function(){
+		$http.get('http://localhost:6868/todo').success(function(response){
+			if(response.status){
+				$scope.todos = response.data;
+			}
+		});
+	};
 
-	$scope.a = 5;
-	$scope.b = 10;
-
-	$scope.text= 'Hello World';
+	$scope.store = function(){
+		$http({
+		  method: 'PUT',
+		  url: 'todo',
+		  data: $scope.todo
+		}).success(function(response){
+			if(response.status){
+				$scope.todos.push(response.data);
+			}
+		});
+	}
 
 	$scope.addTodo = function(todo){
 		if($scope.todos.indexOf(todo) == -1){
@@ -19,6 +35,5 @@ angular.module('MeanStackApp',[]).controller('TodoController', function($scope){
 	$scope.removeTodo = function(todo){
 		$scope.todos.splice($scope.todos.indexOf(todo), 2);
 	}
-
 
 });
