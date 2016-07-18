@@ -17,34 +17,24 @@
 		      <li><a href="#">Page 2</a></li> 
 		      <li><a href="#">Page 3</a></li> 
 		    </ul>
+		    <ul class="nav navbar-nav pull-right">
+		      <li><a href="#/register">Register</a></li> 
+		      <li><a href="#/login">Login</a></li> 
+		    </ul>
 	  	</div>
 	</nav>
-	<div class="container" ng-controller="TodoController" ng-init="index()">
+	<div class="container">
 			
-		<form ng-submit="store()">
-			<div class="row">
-				<div class="col-md-8">
-					<div class="form-group">
-						<input type="text" class="form-control" ng-model="todo.name" placeholder="Enter todo ...">
-					</div>
-				</div>
-				<div class="col-md-4">
-					<button type="submit" class="btn btn-primary btn-block"> Add </button>
-				</div>
-			</div>
-		</form>
-	
-		<ul class="list-group">
-			<li class="list-group-item" ng-repeat="todo in todos">
-				{{todo.name}}
-			</li>
-		</ul>
+		<div ui-view></div>
 
 	</div>
 	
 	<script src="/node_modules/angular/angular.min.js"></script>
 	<script src="/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+	<script src="/node_modules/angular-ui-router/release/angular-ui-router.min.js"></script>
 	<script src="/client/app/app.js"></script>
+	<script src="/client/controller/register.controller.js"></script>
+
 
 </body>
 

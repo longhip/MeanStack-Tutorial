@@ -13,6 +13,4 @@ var userSchema = new mongoose.Schema({
 
 var User = mongoose.model('User', userSchema);
 
-module.exports = Todo;
-
-// YC: password: ma hoa, email: unique. show: name, email, phone. (https://www.npmjs.com/package/bcrypt-nodejs)
+module.exports = User;

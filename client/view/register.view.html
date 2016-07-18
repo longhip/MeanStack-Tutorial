@@ -1,0 +1,39 @@
+<div class="col-md-6 col-md-offset-3" ng-controller="RegisterController">
+	<div class="panel panel-primary">
+		<div class="panel-heading">
+			Register
+		</div>
+		<div class="panel-body">
+			<div class="alert alert-success" ng-if="submited == true && registerStatus.success">
+				<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+			  	<strong>Success!</strong> Indicates a successful or positive action.
+			</div>
+			<div class="alert alert-danger" ng-if="submited == true && registerStatus.errors">
+			  	<strong>Errors!</strong> Indicates a dangerous or potentially negative action.
+			</div>
+			<form>
+				<div class="form-group">
+					<label for="">First name:</label>
+					<input type="text" class="form-control" ng-model="userRegistration.name.first" placeholder="Enter your first name...">
+				</div>
+				<div class="form-group">
+					<label for="">Last name:</label>
+					<input type="text" class="form-control" ng-model="userRegistration.name.last" placeholder="Enter your first name...">
+				</div>
+				<div class="form-group">
+					<label for="">Email:</label>
+					<input type="email" class="form-control" ng-model="userRegistration.email" placeholder="Enter your email..." ng-blur="checkEmail()">
+					<p class="text-danger" ng-if="!emailStatus && blured">Email đã tồn tại</p>
+					<p class="text-success" ng-if="emailStatus && blured">Email có thể sử dụng</p>
+				</div>
+				<div class="form-group">
+					<label for="">Password:</label>
+					<input type="password" class="form-control" ng-model="userRegistration.password" placeholder="Enter your first name...">
+				</div>
+				<div class="form-group">
+					<button class="btn btn-block btn-primary" ng-disabled="!emailStatus" ng-click="register()">Register</button>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>

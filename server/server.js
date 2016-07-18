@@ -4,6 +4,7 @@ var app = express();
 var path = require('path');
 
 var TodoController = require('./controller/todo.controller');
+var UserController = require('./controller/user.controller');
 
 var mongoose = require('mongoose');
 mongoose.connect('mongodb://localhost:27017/meanstack_tutorial');
@@ -16,6 +17,13 @@ app.post('/todo', TodoController.store);
 app.get('/todo/:id', TodoController.show);
 app.put('/todo/:id', TodoController.update);
 app.delete('/todo/:id', TodoController.destroy);
+
+app.get('/user', UserController.index);
+app.get('/user/check/:email', UserController.check);
+app.post('/user', UserController.store);
+app.get('/user/:id', UserController.show);
+app.put('/user/:id', UserController.update);
+app.delete('/user/:id', UserController.destroy);
 
 
 
